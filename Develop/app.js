@@ -34,7 +34,7 @@ function init {
       {
         type: 'input',
         name: 'managerNumber',
-        message: 'What is the managers phone number?'
+        message: 'What is the managers office number?'
       }
     ]}.then((res) => {
       console.log(responses);
@@ -43,7 +43,48 @@ function init {
       createTeam();
     })
   }
+
+  function createTeam() {
+    inquirer.prompt ([
+      {
+        type: 'list',
+        name: 'memberChoice',
+        message: 'What is the position of the next team member?',
+        choices: ['Intern', 'Engineer', 'None']
+      }
+    ]).then((res) => {
+      switch (memberChoice) {
+        case 'Engineer':
+          createEngineer();
+        break;
+        case 'Intern':
+          createIntern();
+        break;
+        default:
+          buildTeam();
+          break;
+      }
+      const team =[];
+      const teamMember = res.memberChoice
+      team.push(teamMember);
+    })
+  }
+
+  function createEngineer() {
+
+  }
+
+  function createIntern() {
+
+  }
+
+  function buildTeam() {
+
+  }
+  createManager():
+
 }
+init();
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
