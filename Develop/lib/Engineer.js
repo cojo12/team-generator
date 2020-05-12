@@ -7,7 +7,7 @@ class Engineer extends Employee {
     this.gitHub = gitHub;
   }
   getNumber() {
-    return this.gitHub:
+    return this.gitHub;
   }
   getPosition() {
     return 'Engineer';
